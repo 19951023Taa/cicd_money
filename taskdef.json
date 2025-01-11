@@ -13,7 +13,49 @@
                 }
             ],
             "essential": true,
-            "environment": [],
+            "environment": [
+                {
+                    "name": "ENV_VAR_NAME",
+                    "value": "value1"
+                },
+                {
+                    "name": "ANOTHER_VAR",
+                    "value": "value2"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "stopTimeout": 120,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/aws/ecs/keirin-bet-<ENV>-ecs-money-log-main",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "systemControls": []
+        },
+        {
+            "name": "keirin-bet-<ENV>-ecs-money-datadog-agent",
+            "image": "public.ecr.aws/datadog/agent:latest",
+            "cpu": 0,
+            "portMappings": [],
+            "essential": false,
+            "environment": [
+                {
+                    "name": "ECS_FARGATE",
+                    "value": "true"
+                },
+                {
+                    "name": "DD_SITE",
+                    "value": "ap1.datadoghq.com"
+                },
+                {
+                    "name": "DD_money_KEY",
+                    "value": "a700cedc5ae3973a55c29d4b12ad328d"
+                }
+            ],
             "mountPoints": [],
             "volumesFrom": [],
             "logConfiguration": {
@@ -21,7 +63,7 @@
                 "options": {
                     "awslogs-group": "/aws/ecs/keirin-bet-<ENV>-ecs-money-log-main",
                     "awslogs-region": "ap-northeast-1",
-                    "awslogs-stream-prefix": "ecs"
+                    "awslogs-stream-prefix": "datadog-agent"
                 }
             },
             "systemControls": []
@@ -45,13 +87,13 @@
             "name": "com.amazonaws.ecs.capability.ecr-auth"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+            "name": "com.amazonaws.ecs.capability.docker-remote-money.1.19"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            "name": "com.amazonaws.ecs.capability.docker-remote-money.1.18"
         },
         {
             "name": "ecs.capability.task-eni"
@@ -67,6 +109,6 @@
     ],
     "cpu": "256",
     "memory": "512",
-    "registeredAt": "2024-10-24T00:57:21.372Z",
+    "registeredAt": "2024-10-28T01:28:35.073Z",
     "registeredBy": "arn:aws:iam::<ACCOUNT_ID>:user/terraform-dev-user",
 }
