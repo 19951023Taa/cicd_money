@@ -52,7 +52,7 @@
                     "value": "ap1.datadoghq.com"
                 },
                 {
-                    "name": "DD_money_KEY",
+                    "name": "DD_API_KEY",
                     "value": "a700cedc5ae3973a55c29d4b12ad328d"
                 }
             ],
