@@ -53,7 +53,7 @@
                 },
                 {
                     "name": "DD_API_KEY",
-                    "value": "xxxxxxxxxxxxxxxxxx"
+                    "value": "<DD_API_KEY>"
                 }
             ],
             "mountPoints": [],
