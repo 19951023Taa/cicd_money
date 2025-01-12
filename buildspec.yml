@@ -1,4 +1,9 @@
 version: 0.2
+
+env:
+  parameter-store:
+    DD_API_KEY: "DD_API_KEY"
+
 phases:
   pre_build:
     commands:
@@ -22,6 +27,7 @@ phases:
       - sed -i -e "s#<ENV>#$ENV#" appspec.yml
       - sed -i -e "s#<ENV>#$ENV#" taskdef.json
       - sed -i -e "s#<ACCOUNT_ID>#$ACCOUNT_ID#" taskdef.json
+      - sed -i -e "s#<DD_API_KEY>#$DD_API_KEY#" taskdef.json
       - cat appspec.yml
       - cat taskdef.json
 
