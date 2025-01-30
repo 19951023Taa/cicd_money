@@ -48,12 +48,16 @@
                     "value": "true"
                 },
                 {
-                    "name": "DD_SITE",
-                    "value": "ap1.datadoghq.com"
-                },
-                {
                     "name": "DD_API_KEY",
                     "value": "<DD_API_KEY>"
+                },
+                {
+                    "name": "DD_ECS_TASK_COLLECTION_ENABLED",
+                    "value": "true"
+                },
+                {
+                    "name": "DD_SITE",
+                    "value": "ap1.datadoghq.com"
                 }
             ],
             "mountPoints": [],
@@ -70,7 +74,7 @@
         }
     ],
     "family": "keirin-bet-<ENV>-ecs-money-task",
-    "taskRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/keirin-bet-<ENV>-ecs-exec-role",
+    "taskRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/keirin-bet-<ENV>-ecs-bet-role",
     "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/keirin-bet-<ENV>-ecs-task-role",
     "networkMode": "awsvpc",
     "revision": 1,
