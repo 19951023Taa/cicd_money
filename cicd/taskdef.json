@@ -15,12 +15,16 @@
             "essential": true,
             "environment": [
                 {
-                    "name": "ENV_VAR_NAME",
-                    "value": "value1"
+                    "name": "LB_ENDPOINT",
+                    "value": "<LB_ENDPOINT>"
                 },
                 {
-                    "name": "ANOTHER_VAR",
-                    "value": "value2"
+                    "name": "DB_WRITE_ENDPOINT",
+                    "value": "<DB_WRITE_ENDPOINT>"
+                },
+                {
+                    "name": "DB_READ_ENDPOINT",
+                    "value": "<DB_READ_ENDPOINT>"
                 }
             ],
             "mountPoints": [],
