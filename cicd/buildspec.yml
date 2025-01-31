@@ -29,6 +29,9 @@ phases:
       - sed -i -e "s#<ENV>#$ENV#" cicd/taskdef.json
       - sed -i -e "s#<ACCOUNT_ID>#$ACCOUNT_ID#" cicd/taskdef.json
       - sed -i -e "s#<DD_API_KEY>#$DD_API_KEY#" cicd/taskdef.json
+      - sed -i -e "s#<LB_ENDPOINT>#$LB_ENDPOINT#" cicd/taskdef.json
+      - sed -i -e "s#<DB_WRITE_ENDPOINT>#$DB_WRITE_ENDPOINT#" cicd/taskdef.json
+      - sed -i -e "s#<DB_READ_ENDPOINT>#$DB_READ_ENDPOINT#" cicd/taskdef.json
       - cat cicd/appspec.yml
       - cat cicd/taskdef.json
 
