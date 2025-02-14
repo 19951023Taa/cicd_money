@@ -16,7 +16,7 @@ phases:
     commands:
       - echo "Building the Docker image..."
       - ls -l
-      - docker build -t $REPOSITORY_URI:latest .
+      - docker build -t $REPOSITORY_URI:latest -f docker/Dockerfile .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
 
   post_build:
