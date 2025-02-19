@@ -13,18 +13,11 @@
                 }
             ],
             "essential": true,
-            "environment": [
+            "environment": [],
+            "environmentFiles": [
                 {
-                    "name": "LB_ENDPOINT",
-                    "value": "<LB_ENDPOINT>"
-                },
-                {
-                    "name": "DB_WRITE_ENDPOINT",
-                    "value": "<DB_WRITE_ENDPOINT>"
-                },
-                {
-                    "name": "DB_READ_ENDPOINT",
-                    "value": "<DB_READ_ENDPOINT>"
+                    "value": "arn:aws:s3:::keirin-bet-<ENV>-ecs-env-bucket-01/money/<ENV>-money.env",
+                    "type": "s3"
                 }
             ],
             "mountPoints": [],
@@ -95,13 +88,22 @@
             "name": "com.amazonaws.ecs.capability.ecr-auth"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-money.1.19"
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "ecs.capability.env-files.s3"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.container-ordering"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-money.1.18"
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
         },
         {
             "name": "ecs.capability.task-eni"
@@ -117,6 +119,6 @@
     ],
     "cpu": "256",
     "memory": "512",
-    "registeredAt": "2024-10-28T01:28:35.073Z",
-    "registeredBy": "arn:aws:iam::<ACCOUNT_ID>:user/terraform-dev-user",
+    "registeredAt": "2025-02-19T06:18:43.058Z",
+    "registeredBy": "arn:aws:iam::<ACCOUNT_ID>:user/takamasa.kudo.ts",
 }
