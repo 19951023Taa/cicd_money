@@ -25,13 +25,10 @@ phases:
       - docker push $REPOSITORY_URI:latest || echo "Docker push failed"
       - docker push $REPOSITORY_URI:$IMAGE_TAG || echo "Docker push with tag failed"
       - printf '{"Version":"1.0","ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
-      - sed -i -e "s#<ENV>#$ENV#" cicd/appspec.yml
-      - sed -i -e "s#<ENV>#$ENV#" cicd/taskdef.json
-      - sed -i -e "s#<ACCOUNT_ID>#$ACCOUNT_ID#" cicd/taskdef.json
-      - sed -i -e "s#<DD_API_KEY>#$DD_API_KEY#" cicd/taskdef.json
-      - sed -i -e "s#<LB_ENDPOINT>#$LB_ENDPOINT#" cicd/taskdef.json
-      - sed -i -e "s#<DB_WRITE_ENDPOINT>#$DB_WRITE_ENDPOINT#" cicd/taskdef.json
-      - sed -i -e "s#<DB_READ_ENDPOINT>#$DB_READ_ENDPOINT#" cicd/taskdef.json
+      - sed -i -e "s|<ENV>|$ENV|g" cicd/appspec.yml
+      - sed -i -e "s|<ENV>|$ENV|g" cicd/taskdef.json
+      - sed -i -e "s|<ACCOUNT_ID>|$ACCOUNT_ID|g" cicd/taskdef.json
+      - sed -i -e "s|<DD_API_KEY>|$DD_API_KEY|g" cicd/taskdef.json
       - cat cicd/appspec.yml
       - cat cicd/taskdef.json
 
